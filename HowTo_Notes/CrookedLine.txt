@@ -1,0 +1,29 @@
+How to project a crooked linear arrangements of electrodes onto a line:
+
+1) Download
+https://www.mathworks.com/matlabcentral/fileexchange/16800-orthogonal-linear-regression
+
+and
+
+https://www.mathworks.com/matlabcentral/fileexchange/7844-geom2d/content/geom2d/geom2d/projPointOnLine.m
+
+
+2) Set xp the x-positions of your electrodes and yp the y-positions of your electrodes.
+
+3) Get the polynomial fit
+p=linortfit2(xp,yp)
+
+4) Project points onto line
+pts=projPointOnLine([xp(:) yp(:)], [0 p(2) 1 p(1)]);
+
+5) Set the first point as zero and calculate distance
+ref=1; % Reference electrode
+elecs=pts-repmat(pts(ref,:),length(pts),1);
+xnew=sqrt(elecs(:,1).^2+elecs(:,2).^2);
+
+6) Find new topography for the points: set topodata=[topodatx topodaty topodatz];
+znew=griddata(topodata(:,1),topodata(:,2),topodata(:,3),pts(:,1),pts(:,2));
+
+7) Write out new coordinates
+dlmwrite('xycoords2d.txt',[xnew znew],'\t')
+
