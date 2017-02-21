@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+
+\usepackage{url}
+\setlength{\parskip}{0.5cm plus4mm minus3mm}
+
+\textwidth=6.4in
+\textheight=8.5in
+\hoffset=-0.7in
+\voffset=-0.7in
+
+\setlength{\parindent}{0cm} 
+
+%\usepackage{fullpage}
+
+
+\title{BERT tutorial}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+BERT is a powerful 2-D and 3-D electrical resistivity inversion
+program and it is relatively easy to use. It is installed on the
+Student Linux computer.  You can use it either by physically sitting
+at the Linux computer or by accessing your account remotely.
+
+
+\section{Workflow}
+Using BERT for basic inversions is generally very simple. It happens
+in 3 steps:
+\begin{enumerate}
+\item Create an inversion configuration file (and edit it if you need to)
+\item run the calculations
+\item create a .vtk file that you can look at using paraview
+\end{enumerate}
+
+\section{Preparation and editing of inversion file}
+To do step 1, type, in the Linux command line (which you openend
+through PuTTY)
+
+\quad \verb#bertNew3D datafile.ohm > invfile.cfg#
+
+Here you should replace \verb#datafile.ohm# with the name of the .ohm
+datafile you are using and replace \verb#invfile.cfg# with the name
+you would like to use for your inversion file. If you would like to
+run 2.5-D inversion instead of inversion, replace \verb#bertNew3D#
+with \verb#bertNew2D#.
+
+Once the inversion file is created, you can copy it to your machine
+and have a look at the parameters or use emacs to look at it directly
+through the command line:
+
+\quad \verb#emacs invfile.cfg#
+
+Which will open the text file. To save changes, hold Ctrl and press
+``x'' and then ``s''. To exit the editing screen and return to command
+line hold Ctrl and then press ``x'' and then ``c''.
+
+\section{Running the inversion}
+
+To do the calculations, run
+
+\quad \verb#bert invfile.cfg all#
+
+This may take a while as such calculations can be quite involved. In
+particular if you edited the inversion configuration file to make a
+fine mesh.
+
+\section{Creating visualization files}
+To create visualization output files (.vtk which you can view using
+paraview), run
+
+\quad \verb#bert invfile.cfg show#
+
+This will create a .vtk file which you can now copy onto your computer
+using PSCP.
+
+To view the .vtk file on your computer, use Paraview which you can
+obtain from here: \url{www.paraview.org/}
+
+\section{Storing your calculation results}
+To store your calculation results, for example if you want to run
+another calculation using different settings but don't want to
+overwrite your results, run
+
+\quad \verb#bert invfile.cfg save myfoldername#
+
+This will create a new folder with the name \verb#myfoldername# and
+automatically copy all relevant files into it. You can change the name
+of the folder if you like.
+
+\section{Cleaning up calculation results}
+
+To clean up the folder from temporary calculation results, run
+
+\quad \verb#bert invfile.cfg clean#
+
+This will keep your data and cfg files and only delete temporary
+calculation files.
+
+\section{More options}
+
+BERT has many more useful commands. Run
+
+\qquad \verb+bert+
+
+to get a list of commands. Also, read through the BERT tutorial\\
+\url{http://www.resistivity.net/download/bert-tutorial.pdf}.
+
+\end{document}
+
