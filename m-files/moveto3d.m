@@ -46,7 +46,14 @@ fin=fopen(vtkfilein,'r');
 fout=fopen(vtkfileout,'w');
 
 % Read and write first 4 lines
-for i=1:4
+% First line
+line=fgetl(fin);
+fprintf(fout,[line '\n']);
+% Second line we will replace
+fgetl(fin);
+fprintf(fout,'BERT 2.5D result transformed using moveto3d.m \n');
+% Third and fourth line
+for i=1:2
     line=fgetl(fin);
     fprintf(fout,[line '\n']);
 end
