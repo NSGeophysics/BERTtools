@@ -1,4 +1,19 @@
-How to project a crooked linear arrangements of electrodes onto a line:
+* How to "uncrinkle" a line of 3D coordinates
+
+(calculate profile coordinates based on incremental distances between
+the electrodes)
+
+1) 
+
+
+
+
+
+
+
+
+
+* How to project a crooked linear arrangements of electrodes onto a line:
 
 1) Download
 https://www.mathworks.com/matlabcentral/fileexchange/16800-orthogonal-linear-regression

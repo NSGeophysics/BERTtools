@@ -1,0 +1,16 @@
+1) Install WinPython http://winpython.github.io/#releases
+
+2) Install MSYS https://msys2.github.io
+
+3) In MSYS home folder:
+add winpython to path in ~/.bashrc
+export PATH=$PATH:/c/pathtoMSYS/blablabla
+
+4) Download and install BERT from GitLab (scroll down on landing page for binaries)
+
+5) In MSYS home folder:
+add BERT to path and pythonpath in ~/.bashrc
+export PATH=$PATH:/c/Software/BERT
+export PYTHONPATH=$PYTHONPATH:/c/Software/BERT
+
+Then it should run!!
