@@ -3,12 +3,19 @@
 (calculate profile coordinates based on incremental distances between
 the electrodes)
 
-1) 
+1) Download the Matlab function Pos3dToLine.m from
+https://raw.githubusercontent.com/NSGeophysics/GPStools/master/Pos3dToLine.m
 
+2) create an N x 3 matrix named "positions" containing the x-coords in
+the first column, the y-coords in the second column, the z-coords in
+the third column.
 
+Run
 
+profile=Pos3dToLine(positions);
 
-
+3) The first column of "profile" will be the along-profile
+coordinates, the second column are the elevations.
 
 
 
