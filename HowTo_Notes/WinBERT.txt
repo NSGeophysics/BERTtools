@@ -1,10 +1,12 @@
 1) Install WinPython http://winpython.github.io/#releases
+Get the one with QT5, python 3.6, 64 bit
 
 2) Install MSYS https://msys2.github.io
+Get the one for 64 bit
 
 3) In MSYS home folder:
 add winpython to path in ~/.bashrc
-export PATH=$PATH:/c/pathtoMSYS/blablabla
+export PATH=$PATH:/c/pathtowinpython/blablabla
 
 4) Download and install BERT from GitLab (scroll down on landing page for binaries)
 
