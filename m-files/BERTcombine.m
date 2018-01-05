@@ -6,9 +6,9 @@ function BERTcombine(file1,file2,outfile,otherelecs,twoorthreed,errgiven)
 %
 % INPUT:
 %
-% file1         name of first file (don't forget the .stg part)
-% file2         name of second file (don't forget the .stg part)
-% outfile       name for the optput file (don't forget the .stg part)
+% file1         name of first file (don't forget the .ohm part)
+% file2         name of second file (don't forget the .ohm part)
+% outfile       name for the optput file (don't forget the .ohm part)
 % otherelecs    are the two files measured with the different electrodes?
 %               1 for yes, 0 for no (same electrodes used)
 % twoorthreed   0 for 2D data points (x z), 1 for 3D (x y z)
