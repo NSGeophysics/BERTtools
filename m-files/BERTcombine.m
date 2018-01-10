@@ -73,7 +73,7 @@ if otherelecs
     if twoorthreed
         for i=1:nelecs2
             line2=fgetl(fid2);
-            lnf2=sscanf(line2,'%f\t%f\%f');
+            lnf2=sscanf(line2,'%f\t%f\t%f');
             fprintf(fidout,'%f\t%f\t%f\n',lnf2(1),lnf2(2),lnf2(3));        
         end
     else
